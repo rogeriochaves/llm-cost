@@ -1,6 +1,6 @@
 {
   "name": "llm-cost",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "author": "",
   "license": "MIT",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "devDependencies": {
     "vitest": "^0.5.0",
     "@types/node": "^16.0.0",
