@@ -1,5 +1,9 @@
 # llm-cost
 
+[![Tests](https://github.com/rogeriochaves/llm-cost/actions/workflows/node.js.yml/badge.svg)](https://github.com/rogeriochaves/llm-cost/actions/workflows/node.js.yml)
+[![npm version](https://badge.fury.io/js/llm-cost.svg)](https://www.npmjs.com/package/llm-cost)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rogeriochaves/llm-cost/blob/master/LICENSE)
+
 `llm-cost` is a utility library for counting tokens and estimating the cost of LLMs from various providers such as OpenAI, Anthropic, Cohere, and more.
 
 ## Features
@@ -21,13 +25,13 @@ This function takes the model name, input text, and output text. It returns a pr
 Please note that when calling `tokenizeAndEstimateCost` for the first time with a specific model, it will load the tokenizer for that model and cache it in memory. This means that the first call may be slower, but subsequent calls will be faster due to the tokenizer being cached.
 
 ```typescript
-import { tokenizeAndEstimateCost } from 'llm-cost';
+import { tokenizeAndEstimateCost } from "llm-cost";
 
 async function main() {
   const result = await tokenizeAndEstimateCost({
-    model: 'gpt-4',
-    input: 'Hello, world!',
-    output: 'Hi there, how are you?'
+    model: "gpt-4",
+    input: "Hello, world!",
+    output: "Hi there, how are you?",
   });
 
   console.log(result);
@@ -42,12 +46,12 @@ main();
 This function estimates the cost of using an LLM based on the number of input and output tokens, if you already have them. It takes an object with the model name, input token count, and output token count, returning the estimated cost.
 
 ```typescript
-import { estimateCost } from 'llm-cost';
+import { estimateCost } from "llm-cost";
 
 const cost = estimateCost({
-  model: 'gpt-4',
+  model: "gpt-4",
   inputTokens: 3000,
-  outputTokens: 2100
+  outputTokens: 2100,
 });
 
 console.log(cost);
