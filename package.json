@@ -2,7 +2,7 @@
   "name": "llm-cost",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "vitest",
     "build": "tsc",
