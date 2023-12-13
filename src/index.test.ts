@@ -27,4 +27,13 @@ describe("estimateCost", () => {
       })
     ).toBe(0.216);
   });
+
+  it("should estimate cost correctly for embeddings model", () => {
+    expect(
+      estimateCost({
+        model: "text-embedding-ada-002",
+        inputTokens: 3000,
+      })
+    ).toBe(0.0003);
+  });
 });
