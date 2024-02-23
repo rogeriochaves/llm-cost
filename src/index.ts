@@ -87,12 +87,14 @@ export function estimateCost({
   const modelPrice = (
     modelPrices as Record<
       string,
-      { input_cost_per_token: number; output_cost_per_token: number }
+      { input_cost_per_token?: number; output_cost_per_token?: number }
     >
   )[model];
 
-  return modelPrice
-    ? (inputTokens || 0) * modelPrice.input_cost_per_token +
-        (outputTokens || 0) * modelPrice.output_cost_per_token
+  const { input_cost_per_token, output_cost_per_token } = modelPrice || {};
+
+  return input_cost_per_token || output_cost_per_token
+    ? (inputTokens || 0) * (input_cost_per_token ?? 0) +
+        (outputTokens || 0) * (output_cost_per_token ?? 0)
     : undefined;
 }
