@@ -1,6 +1,6 @@
 {
   "name": "llm-cost",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/src/index.js",
   "scripts": {
